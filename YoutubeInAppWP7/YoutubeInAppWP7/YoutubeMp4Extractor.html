@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script type="text/javascript">
+        function GetYoutubeUrl(input) {
+            
+            // Take the input and extract the cached Mp4 Url
+            var result = unescape(unescape(input));
+
+            var patt = /http\:[^;,]*?medium[^;,]*type=video\/mp4/g;
+            var url = patt.exec(result);
+
+            // Pass the result back to the host application
+            window.external.Notify(url.toLocaleString());
+
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
