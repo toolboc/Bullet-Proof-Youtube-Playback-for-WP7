@@ -11,7 +11,6 @@
     d:DesignWidth="480" d:DesignHeight="768"  
 	mc:Ignorable="d">
 
-    <!--Sample code showing usage of ApplicationBar-->
 	<phone:PhoneApplicationPage.DataContext>
 		<YoutubeInAppWP7_ViewModels:SearchPageViewModel/>
 	</phone:PhoneApplicationPage.DataContext>
