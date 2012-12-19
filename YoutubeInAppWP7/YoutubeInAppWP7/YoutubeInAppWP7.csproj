@@ -56,15 +56,13 @@
   <ItemGroup>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Interop" />
-    <Reference Include="Microsoft.SilverlightMediaFramework.Core.Phone, Version=2.2011.1101.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SilverlightMediaFramework.Plugins.Phone, Version=2.2011.1101.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SilverlightMediaFramework.Test.Phone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SilverlightMediaFramework.Utilities.Phone, Version=2.2011.1101.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SMF.Compatibility.Phone, Version=2.2011.1101.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SMF.Plugins.Progressive.Phone, Version=2.2011.1101.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SMF.Plugins.SmoothStreaming.Phone, Version=2.2011.1101.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SMF.Plugins.TimedText.Phone, Version=2.2011.1101.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Web.Media.SmoothStreaming, Version=1.1.837.145, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SilverlightMediaFramework.Compatibility.Phone, Version=2.2012.605.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SilverlightMediaFramework.Core.Phone, Version=2.2012.605.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SilverlightMediaFramework.Plugins.Phone, Version=2.2012.605.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SilverlightMediaFramework.Plugins.Progressive.Phone, Version=2.2012.605.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SilverlightMediaFramework.Plugins.SmoothStreaming.Phone, Version=2.2012.605.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SilverlightMediaFramework.Plugins.TimedText.Phone, Version=2.2012.605.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SilverlightMediaFramework.Utilities.Phone, Version=2.2012.605.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -114,6 +112,27 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="SampleData\YoutubeImage.jpg" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Compatibility.Phone.dll" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Compatibility.Phone.pdb" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Compatibility.Phone.xml" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Core.Phone.dll" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Core.Phone.pdb" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Core.Phone.xml" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.Phone.dll" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.Phone.pdb" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.Phone.xml" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.Progressive.Phone.dll" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.Progressive.Phone.pdb" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.Progressive.Phone.xml" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.SmoothStreaming.Phone.dll" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.SmoothStreaming.Phone.pdb" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.SmoothStreaming.Phone.xml" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.TimedText.Phone.dll" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.TimedText.Phone.pdb" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Plugins.TimedText.Phone.xml" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Utilities.Phone.dll" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Utilities.Phone.pdb" />
+    <Content Include="SMF\Microsoft.SilverlightMediaFramework.Utilities.Phone.xml" />
     <Content Include="YoutubeMp4Extractor.html" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
