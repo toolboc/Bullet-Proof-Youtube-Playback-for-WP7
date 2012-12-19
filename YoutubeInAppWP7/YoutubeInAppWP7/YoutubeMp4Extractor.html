@@ -1,23 +1,45 @@
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script type="text/javascript">
-        function GetYoutubeUrl(input) {
-            
-            // Take the input and modify it somehow
-            var result = unescape(unescape(input));
-			
-			//var patt = /http\:[^;,]*?medium[^;,]*type=video\/mp4/g;
-            var patt = /http:[^;,]*?itag=18[^;,]*type=video\/mp4.*quality=medium/g;
-            
-			var url = patt.exec(result);
-			
-			url = url.toLocaleString();
-			
-			url = url.replace('sig', 'signature');
-			
-            // Pass the result back to the host application
-            window.external.Notify(url.toLocaleString());
+        function GetYoutubeUrl(input) 
+        {
+            var result = unescape(input);
 
+            var patt = /url_encoded_fmt_stream_map=.*?;/g;
+            var fm_stream_map_encoded = patt.exec(result);
+            fm_stream_map_encoded = fm_stream_map_encoded.toLocaleString();
+            fm_stream_map_encoded = fm_stream_map_encoded.slice(27, -10); //remove 'url_encoded_fmt_stream_map=' and trailing '\u0026amp;'
+
+            var formatsGroup = fm_stream_map_encoded.split(",");
+
+            var videoURL = new Array();
+
+            for (var i = 0; i < formatsGroup.length; i++) {
+                var videoFormatsElem = formatsGroup[i].split("&");
+
+                var videoFormatsPair = new Array();
+
+                for (var j = 0; j < videoFormatsElem.length; j++) {
+                    var pair = videoFormatsElem[j].split("=");
+                    if (pair.length == 2) {
+                        videoFormatsPair[pair[0]] = pair[1];
+                    }
+                }
+
+                var url = (videoFormatsPair['url']) ? videoFormatsPair['url'] : null;
+                if (url == null) continue;
+                url = unescape(unescape(url)).replace(/\\\//g, '/').replace(/\\u0026/g, '&');
+                var itag = (videoFormatsPair['itag']) ? videoFormatsPair['itag'] : null;
+                if (itag == null) continue;
+                var signature = (videoFormatsPair['sig']) ? videoFormatsPair['sig'] : null;
+                if (signature != null) {
+                    url = url + "&signature=" + signature;
+                }
+                if (url.toLowerCase().indexOf('http') == 0) { // validate URL
+                    videoURL[itag] = url;
+                }
+            }
+            window.external.notify(videoURL[18].toLocaleString());
         }
     </script>
 </head>
