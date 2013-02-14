@@ -1,21 +1,38 @@
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script type="text/javascript">
-        function GetYoutubeUrl(input) 
-        {
-            var result = unescape(input);
 
-            var patt = /url_encoded_fmt_stream_map=.*?;/g;
-            var fm_stream_map_encoded = patt.exec(result);
+        function GetYoutubeUrl(input) {
+            var formats = GetAvailableFormats(input);
+            window.external.notify(formats[18].toLocaleString());
+        }
+
+        function GetHDYoutubeUrl(input) {
+
+            var formats = GetAvailableFormats(input);
+
+            if ('22' in formats)
+                window.external.notify(formats[22].toLocaleString());
+            else
+                window.external.notify(formats[18].toLocaleString());
+
+
+        }
+
+        function GetAvailableFormats(input) {
+            var patt = /url_encoded_fmt_stream_map.*?",/g;
+            var fm_stream_map_encoded = patt.exec(input);
             fm_stream_map_encoded = fm_stream_map_encoded.toLocaleString();
-            fm_stream_map_encoded = fm_stream_map_encoded.slice(27, -10); //remove 'url_encoded_fmt_stream_map=' and trailing '\u0026amp;'
+            fm_stream_map_encoded = fm_stream_map_encoded.slice(30, -2); //remove "url_encoded_fmt_stream_map": and trailing ",
+
+            //var result = unescape(fm_stream_map_encoded);
 
             var formatsGroup = fm_stream_map_encoded.split(",");
 
             var videoURL = new Array();
 
             for (var i = 0; i < formatsGroup.length; i++) {
-                var videoFormatsElem = formatsGroup[i].split("&");
+                var videoFormatsElem = formatsGroup[i].split("\\u0026");
 
                 var videoFormatsPair = new Array();
 
@@ -39,8 +56,10 @@
                     videoURL[itag] = url;
                 }
             }
-            window.external.notify(videoURL[18].toLocaleString());
+
+            return videoURL;
         }
+		
     </script>
 </head>
 <body>
